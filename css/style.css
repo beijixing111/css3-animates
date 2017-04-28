@@ -374,6 +374,9 @@ a{
 	.st-panel p{ width: 90% left5%;margin-top: 0; }
 	.st-container > a{ font-size: 12px; }
 	.st-desc{ width: 120px;height: 120px; margin-left: -60px; }
+	.st-container input:checked + a:after{
+		border: 10px solid transparent;  border-bottom-color: #821134;margin-left: -10px;
+	}
 	[data-icon]:after{
 		font-size: 60px;
 		-webkit-transform: rotate(-45deg) translateY(15%);
