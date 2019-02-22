@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE-edge,chrome=1">
+	<title>navbar动画效果</title>
+	<style>
+		*{ margin: 0; padding: 0; }
+		ul,li{
+			list-style: none; 
+		}
+		.lavalamp{
+			position: relative; border-radius: 10px;
+			height: 50px; width: 1000px; margin: 20px;
+		}
+		.lavalamp ul{
+			position: relative; z-index: 300;
+		}
+		.lavalamp li{
+			float: left; text-align: center;  height: 50px; line-height: 50px;
+		}
+		.lavalamp li a{
+			color: #fff; padding: 0 20px; text-decoration: none;
+			text-shadow: 0 -1px 0 rgba(0,0,0,.40);
+		}
+		.dark{
+			background: -webkit-gradient(linear, left top, left bottom, from(rgb(89,89,89)), 
+				to(rgb(54,54,54)));
+			border: 1px solid #272727; 
+		}
+		.floatr{
+			position: absolute; top: 10px; z-index: 50; 
+			height: 30px; border-radius: 8px; background: rgba(0,0,0,.20);
+			transition: all .4s ease-in-out; border: 1px solid #fff;
+		}
+	</style>
+</head>
+<body>
+	<div class="lavalamp dark">
+    <ul>
+        <li class="active"><a href="">Home</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Blog</a></li>
+        <li><a href="">Services</a></li>
+        <li><a href="">Portfolio</a></li>
+        <li><a href="">Contacts</a></li>
+        <li><a href="">Back to Article</a></li>
+        <li><a href="">How it Works?</a></li>
+    </ul>
+    <div class="floatr"  >
+    </div>
+  </div>
+  <script src="http://css3lib.alloyteam.com/uilib/menu_nav/demo9/js/jquery-1.4.1.min.js"></script>
+  <script>
+  	$(function(){
+  		var dleft = $(".lavalamp li.active").offset().left - $(".lavalamp").offset().left;
+  		var dwidth = $(".lavalamp li.active").outerWidth(true);
+  		console.log($(".lavalamp li.active").offset().left);
+  		// console.log($(".lavalamp li.active").position().left);
+  		$(".floatr").css({
+  			"left": dleft + 'px',
+  			"width": dwidth + 'px'
+  		});
+
+  		$('li').hover(function(){ 
+  			var left = $(this).offset().left - ($(this).parents('.lavalamp').offset().left);
+  			var width = $(this).outerWidth(true);
+  			var sinctranslate = "translate(" + left + "px, 0)";
+  			$(this).parent('ul').next('div.floatr').css({
+  				"width": width,
+  				"transform": sinctranslate
+  			}); 
+  		}, function(){ 
+  			if($(this).hasClass('active')) return;
+				var left = $(this).siblings('li.active').offset().left - ($(this).parents('.lavalamp').offset().left);
+				// console.log($(this).siblings('li.active').length);
+				var width = $(this).siblings('li.active').outerWidth(true) + 'px';
+				var sinctranslate = "translate(" + left + "px, 0)";
+				$(this).parent('ul').next('div.floatr').css({
+  				"width": width,
+  				"transform": sinctranslate
+  			}); 
+  		}).click(function() {
+  			$(this).siblings('li').removeClass('active');
+  			$(this).addClass('active');
+  			return false;
+  		});
+
+  	});
+  </script>
+</body>
+</html>

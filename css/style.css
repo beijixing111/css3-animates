@@ -78,12 +78,12 @@ a{
 	width:0;
 	height: 0;
 	overflow: hidden;
-	border:20px solid transparent;
+	border:10px solid transparent;
 	border-bottom-color:#821134;
 	position: absolute;
 	bottom: 100%;
 	left: 50%;
-	margin-left: -20px;
+	margin-left: -10px;
 }
 .st-container input:hover + a{
 	background: #ad244f;
@@ -97,15 +97,7 @@ a{
 }
 .st-scroll{
 	left: 0;top:0;
-	-webkit-transform:translate3d(0,0,0);
-	-moz-transform:translate3d(0,0,0);
-	-o-transform:translate3d(0,0,0);
-	-ms-transform:translate3d(0,0,0);
 	transform:translate3d(0,0,0);
-	-webkit-backface-visibility:hidden;
-	-moz-transition: all 0.6s ease-in-out;
-	-o-transition: all 0.6s ease-in-out;
-	-ms-transition: all 0.6s ease-in-out;
 	transition: all 0.6s ease-in-out;
 }
 .st-panel{
@@ -113,38 +105,18 @@ a{
 	background: #fff;
 }
 #st-control-1:checked ~  .st-scroll{
-	-webkit-transform:translateY(0%);
-	-moz-transform:translateY(0%);
-	-o-transform:translateY(0%);
-	-ms-transform:translateY(0%);
 	transform:translateY(0%);
 }
 #st-control-2:checked ~  .st-scroll{
-	-webkit-transform:translateY(-100%);
-	-moz-transform:translateY(-100%);
-	-o-transform:translateY(-100%);
-	-ms-transform:translateY(-100%);
 	transform:translateY(-100%);
 }
 #st-control-3:checked ~  .st-scroll{
-	-webkit-transform:translateY(-200%);
-	-moz-transform:translateY(-200%);
-	-o-transform:translateY(-200%);
-	-ms-transform:translateY(-200%);
 	transform:translateY(-200%);
 }
 #st-control-4:checked ~  .st-scroll{
-	-webkit-transform:translateY(-300%);
-	-moz-transform:translateY(-300%);
-	-o-transform:translateY(-300%);
-	-ms-transform:translateY(-300%);
 	transform:translateY(-300%);
 }
 #st-control-5:checked ~  .st-scroll{
-	-webkit-transform:translateY(-400%);
-	-moz-transform:translateY(-400%);
-	-o-transform:translateY(-400%);
-	-ms-transform:translateY(-400%);
 	transform:translateY(-400%);
 }
 
@@ -156,10 +128,6 @@ a{
 	left:50%;
 	top:0;
 	margin-left: -100px;
-	-webkit-transform: translateY(-50%) rotate(45deg);
-	-moz-transform: translateY(-50%) rotate(45deg);
-	-ms-transform: translateY(-50%) rotate(45deg);
-	-o-transform: translateY(-50%) rotate(45deg);
 	transform: translateY(-50%) rotate(45deg);
 }
 
@@ -167,7 +135,6 @@ a{
 	content: attr(data-icon);
 	width: 200px;
 	height: 200px;
-	/*background: #0f0;*/
 	color: #fff;
 	font-size: 90px;
 	font-family: Raphaelicons;
@@ -177,10 +144,6 @@ a{
 	left: 50%;
 	top:50%;
 	margin:-100px 0 0 -100px;
-	-webkit-transform: rotate(-45deg) translateY(25%);
-	-moz-transform:  rotate(-45deg) translateY(25%);
-	-ms-transform:  rotate(-45deg) translateY(25%);
-	-o-transform:  rotate(-45deg) translateY(25%);
 	transform: rotate(-45deg) translateY(25%);
 	text-shadow: 1px 1px 1px rgba(151,24,64,.2);
 }
@@ -204,10 +167,6 @@ a{
 #st-control-3:checked ~ .st-scroll #st-panel-3 h2,
 #st-control-4:checked ~ .st-scroll #st-panel-4 h2,
 #st-control-5:checked ~ .st-scroll #st-panel-5 h2{
-	-webkit-animation:moveDown 0.6s ease-in-out 0.2s backwards;
-	-moz-animation:moveDown 0.6s ease-in-out 0.2s backwards;
-	-ms-animation:moveDown 0.6s ease-in-out 0.2s backwards;
-	-o-animation:moveDown 0.6s ease-in-out 0.2s backwards;
 	animation:moveDown 0.6s ease-in-out 0.2s backwards;
 	/*backwards让动画处于开始状态*/
 }
@@ -282,10 +241,6 @@ a{
 #st-control-3:checked ~ .st-scroll #st-panel-3 p,
 #st-control-4:checked ~ .st-scroll #st-panel-4 p,
 #st-control-5:checked ~ .st-scroll #st-panel-5 p{
-	-webkit-animation:moveLeft 0.6s ease-in-out 0.2s backwards;
-	-moz-animation:moveLeft 0.6s ease-in-out 0.2s backwards;
-	-ms-animation:moveLeft 0.6s ease-in-out 0.2s backwards;
-	-o-animation:moveLeft 0.6s ease-in-out 0.2s backwards;
 	animation:moveLeft 0.6s ease-in-out 0.2s backwards;
 }
 
@@ -297,58 +252,21 @@ a{
 	}
 	100%{
 		-webkit-transform:translateX(0px);
-		opacity: 1;
-		color: green;
+		opacity: 1; color: green;
 	}
 }
 
-@-moz-keyframes moveLeft{
-	0%{
-		-moz-transform:translateX(-100px);
-		opacity: 0;
-		color: red;
-	}
-	100%{
-		-moz-transform:translateX(0px);
-		opacity: 1;
-	}
-}
-@-ms-keyframes moveLeft{
-	0%{
-		-ms-transform:translateX(-100px);
-		opacity: 0;
-		color: red;
-	}
-	100%{
-		-ms-transform:translateX(0px);
-		opacity: 1;
-		color: green;
-	}
-}
-@-o-keyframes moveLeft{
-	0%{
-		-o-transform:translateX(-100px);
-		opacity: 0;
-		color: red;
-	}
-	100%{
-		-o-transform:translateX(0px);
-		opacity: 1;
-		color: green;
-	}
-}
 @keyframes moveLeft{
 	0%{
 		transform:translateX(-100px);
-		opacity: 0;
-		color: red;
+		opacity: 0; color: red;
 	}
 	100%{
 		transform:translateX(0px);
-		opacity: 1;
-		color: green;
+		opacity: 1; color: green;
 	}
 }
+
 .st-bg{
 	background: #fa96b5;;
 }
@@ -377,7 +295,7 @@ a{
 	.st-container > a{ font-size: 12px; }
 	.st-desc{ width: 120px;height: 120px; margin-left: -60px; }
 	.st-container input:checked + a:after{
-		border: 10px solid transparent;  border-bottom-color: #821134;margin-left: -10px;
+		border: 5px solid transparent;  border-bottom-color: #821134;margin-left: -5px;
 	}
 	[data-icon]:after{
 		font-size: 60px;
